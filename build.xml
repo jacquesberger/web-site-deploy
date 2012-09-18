@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Sites web" default="deploy-web-site" basedir=".">
+	<property name="base-sources" value="../jberger.org" />
+	<property name="prod-data" value="../notes-prod" />
+	<property name="web-sites" value="../SitesWeb" />
+
+	<target name="clean-current-dir">
+		<delete includeemptydirs="true">
+			<fileset dir="${basedir}" excludes="build.xml" defaultexcludes="false" />
+		</delete>
+	</target>
+
+	<target name="copy-base-sources" depends="clean-current-dir">
+		<copy todir="${basedir}" preservelastmodified="true">
+			<fileset dir="${base-sources}" />
+		</copy>
+	</target>
+
+	<target name="copy-prod-data" depends="copy-base-sources">
+		<copy todir="${basedir}" preservelastmodified="true" overwrite="true">
+			<fileset dir="${prod-data}" />
+		</copy>
+	</target>
+
+	<target name="copy-course-sites" depends="copy-prod-data">
+		<copy todir="${basedir}" preservelastmodified="true" overwrite="true">
+			<fileset dir="${web-sites}" excludes="build.xml" />
+		</copy>
+	</target>
+
+	<target name="delete-unnecessary" depends="copy-course-sites">
+		<delete>
+			<fileset file=".project" />
+		</delete>
+		<delete includeemptydirs="true">
+			<fileset dir=".settings" defaultexcludes="false" />
+		</delete>
+	</target>
+	
+	<target name="deploy-web-site" depends="delete-unnecessary">
+
+	</target>
+</project>
