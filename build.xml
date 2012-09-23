@@ -32,11 +32,14 @@
 		<delete>
 			<fileset file=".project" />
 		</delete>
+		<delete>
+			<fileset file="README.md" />
+		</delete>
 		<delete includeemptydirs="true">
 			<fileset dir=".settings" defaultexcludes="false" />
 		</delete>
 	</target>
-	
+
 	<target name="deploy-web-site" depends="delete-unnecessary">
 
 	</target>
