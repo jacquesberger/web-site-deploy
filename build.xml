@@ -23,13 +23,7 @@
 		</copy>
 	</target>
 
-	<target name="copy-course-sites" depends="copy-prod-data">
-		<copy todir="${dest-dir}" preservelastmodified="true" overwrite="true">
-			<fileset dir="${web-sites}" excludes="build.xml" />
-		</copy>
-	</target>
-
-	<target name="delete-unnecessary" depends="copy-course-sites">
+	<target name="delete-unnecessary" depends="copy-prod-data">
 		<delete>
 			<fileset file="${dest-dir}/.project" />
 		</delete>
