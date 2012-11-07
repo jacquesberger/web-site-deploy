@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="Sites web" default="deploy-web-site" basedir=".">
 	<property name="base-sources" value="../jberger.org" />
-	<property name="prod-data" value="../notes-prod" />
+	<property name="prod-data" value="../jberger.org-prod" />
 	<property name="dest-dir" value="C:\EasyPHP-5.3.8.0\www" />
 
 	<target name="clean-dest-dir">
