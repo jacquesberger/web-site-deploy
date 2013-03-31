@@ -2,7 +2,7 @@
 <project name="Sites web" default="deploy-web-site" basedir=".">
 	<property name="base-sources" value="../jberger.org" />
 	<property name="prod-data" value="../jberger.org-prod" />
-	<property name="dest-dir" value="C:\EasyPHP-5.3.8.0\www" />
+  <property name="dest-dir" value="../www" />
 
 	<target name="clean-dest-dir">
 		<delete includeemptydirs="true">
