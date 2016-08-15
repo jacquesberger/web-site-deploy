@@ -34,18 +34,6 @@
     </copy>
   </target>
 
-  <target name="delete-unnecessary" depends="copy-base-sources">
-    <delete>
-      <fileset file="${dest-dir}/.project" />
-    </delete>
-    <delete>
-      <fileset file="${dest-dir}/README.md" />
-    </delete>
-    <delete includeemptydirs="true">
-      <fileset dir="${dest-dir}/.settings" defaultexcludes="false" />
-    </delete>
-  </target>
-
-  <target name="deploy-web-site" depends="delete-unnecessary">
+  <target name="deploy-web-site" depends="copy-base-sources">
   </target>
 </project>
