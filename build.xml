@@ -20,7 +20,6 @@
 
 <project name="Sites web" default="deploy-web-site" basedir=".">
   <property name="base-sources" value="../jberger.org" />
-  <property name="prod-data" value="../jberger.org-prod" />
   <property name="dest-dir" value="../www" />
 
   <target name="clean-dest-dir">
@@ -35,13 +34,7 @@
     </copy>
   </target>
 
-  <target name="copy-prod-data" depends="copy-base-sources">
-    <copy todir="${dest-dir}" preservelastmodified="true" overwrite="true">
-      <fileset dir="${prod-data}" />
-    </copy>
-  </target>
-
-  <target name="delete-unnecessary" depends="copy-prod-data">
+  <target name="delete-unnecessary" depends="copy-base-sources">
     <delete>
       <fileset file="${dest-dir}/.project" />
     </delete>
